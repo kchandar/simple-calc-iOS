@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     var operating:Bool = false
     var count:Int = 0
     var total:Int = 0
+    var history:[String] = []
+    var current:String = ""
     
     @IBAction func numbers(_ sender: UIButton) {
         if operating {
@@ -28,6 +30,7 @@ class ViewController: UIViewController {
             output.text = output.text! + String(sender.tag - 1)
             numberOnScreen = Int(output.text!)!
         }
+        current += String(sender.tag - 1)
     }
     
     
@@ -38,27 +41,34 @@ class ViewController: UIViewController {
                 case 13:
                     output.text = "+"
                     op = "+"
+                    current += "+"
                 case 12:
                     output.text = "-"
                     op = "-"
+                    current += "-"
                 case 11:
                     output.text = "x"
                     op = "x"
+                    current += "x"
                 case 20:
                     output.text = "/"
                     op = "/"
+                    current += "/"
                 case 17:
                     output.text = "count"
                     op = "count"
                     count += 1
+                    current += "count"
                 case 18:
                     output.text = "avg"
                     op = "avg"
                     total += numberOnScreen
                     count += 1
+                    current += "avg"
                 case 14:
                     output.text = "%"
                     op = "%"
+                    current += "%"
                 default:
                     break
             }
@@ -99,6 +109,9 @@ class ViewController: UIViewController {
                 default:
                 break
             }
+            current += "=" + String(total)
+            history.append(current)
+            current = String(total)
             operating = true
             output.text = String(total)
             numberOnScreen = Int(output.text!)!
@@ -123,7 +136,23 @@ class ViewController: UIViewController {
         operating = true
     }
     
+    func getHistoryArray() -> [String] {
+        return history
+    }
     
+    @IBAction func showHistory(_ sender: UIButton) {
+        let historyPopUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "sbPopUpID") as! HistoryViewController;
+        self.addChildViewController(historyPopUp)
+        historyPopUp.view.frame = self.view.frame
+        self.view.addSubview(historyPopUp.view)
+        historyPopUp.didMove(toParentViewController: self)
+        let scrollView = historyPopUp.scrollView!
+        for index in 0..<history.count {
+            let label = UILabel(frame: CGRect(x: 50, y: index * 25 + 50, width: 300, height: 40))
+            label.text = history[index]
+            scrollView.addSubview(label)
+        }
+    }
     
     @IBAction func reset(_ sender: UIButton) {
         previousNumber = 0
@@ -133,6 +162,7 @@ class ViewController: UIViewController {
         count = 0
         total = 0
         op = ""
+        current = ""
     }
     
     

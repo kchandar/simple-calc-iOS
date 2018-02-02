@@ -12,6 +12,7 @@
 		08ACDE182020639400DFEECA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08ACDE162020639400DFEECA /* Main.storyboard */; };
 		08ACDE1A2020639400DFEECA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08ACDE192020639400DFEECA /* Assets.xcassets */; };
 		08ACDE1D2020639400DFEECA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08ACDE1B2020639400DFEECA /* LaunchScreen.storyboard */; };
+		08ACDE292024363100DFEECA /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08ACDE282024363100DFEECA /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		08ACDE192020639400DFEECA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		08ACDE1C2020639400DFEECA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		08ACDE1E2020639400DFEECA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		08ACDE282024363100DFEECA /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				08ACDE122020639400DFEECA /* AppDelegate.swift */,
 				08ACDE142020639400DFEECA /* ViewController.swift */,
 				08ACDE162020639400DFEECA /* Main.storyboard */,
+				08ACDE282024363100DFEECA /* HistoryViewController.swift */,
 				08ACDE192020639400DFEECA /* Assets.xcassets */,
 				08ACDE1B2020639400DFEECA /* LaunchScreen.storyboard */,
 				08ACDE1E2020639400DFEECA /* Info.plist */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08ACDE292024363100DFEECA /* HistoryViewController.swift in Sources */,
 				08ACDE152020639400DFEECA /* ViewController.swift in Sources */,
 				08ACDE132020639400DFEECA /* AppDelegate.swift in Sources */,
 			);
